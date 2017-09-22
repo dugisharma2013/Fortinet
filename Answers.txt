@@ -1,0 +1,47 @@
+1. Time Comlexity : O(N); N - Number of elements
+   Space Complexity : O(1)
+
+   // code in folder ReverseLinkedList
+
+ReverseSinglyList.java contains the main functionality with a main method. Can be run with the static LinkedList created in the main method to show the reverse functionality.
+
+ReverseSinglyTest.java is the Junit test cases checking the following -
+null list
+any other sample list (eg 10->5>null gives 5->10->null)
+if its a circular list
+
+2. // Time complexity:  O(N^2)
+   // Space complexity: O(n), taking a List<Integer> and some variables
+    // code in folder MultiDimensional
+
+3. Time Comlexity : O(N^2); N - Number of elements
+   Space Complexity : O(N)
+
+   // code in folder GroupSum
+
+4. Dynamic Proxy pattern :
+//Code is in DynamicProxy folder 
+
+Simply, proxy means an object representing another object. Accordingly, a Proxy Pattern "provides the control for accessing the original object".
+
+Scenario - 
+
+Here, we are using dynamic proxy pattern as a protective proxy pattern whereby users with only roles more than 5 have access to all database operation. Other users only have limited usage. For this purpose, we are creating an interface OfficeDBAccess from where both RealDBAccess and ProxyDBAccess is inheriting. We have a client program, ProxyPatternClient which is calling a method grantDBAccess which grants full DB access to users with role greater than 5 by initialising objec with reference to RealDBAccess via ProxyDBAccess.
+
+Singleton Design Pattern :
+
+//Code is inside the folder Singleton
+
+Singleton desing pattern is another creational design pattern that is used to create objects. It specifies that only one object of a class can be initialized at a time by the JVM.
+
+Scenario -
+
+Database connections utilize singleton pattern because many DB drivers are not thread safe. So even if there are many threads accessing the database, they all use the same connection. This way it provides thread safety.
+
+5. To mock DB in JUnit test for service method we can use the Mockito framework to mock the DAO layers having the DB connections with some random data.
+
+Scenario - Let us consider a product ordering service. The client interacts with the DAO to order a few prodcuts. The service class has been completed but the DAO and DB are yet to be configured. In this case, to test the proper functioning of the service layer, the complete implementation of the DAO layers along with the real DB is required as they are dependencies for the service layer. Instead of writing the DAO layers and DB config which could take time, we can just mock those classes using the Mockito framework (using either the mock() call or @Mock annotation) and continue along to build JUnit test cases.
+
+ProductServiceTest contains the JUnit tests and MockCreationTest and MockCreationAnnotation contains the Mock classes (using mock() and @Mock annotations respectively). 
+
+// Code inside the MockDB folder.
